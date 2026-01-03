@@ -1,0 +1,40 @@
+.site-header,
+.site-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+.header-inner,
+.footer-inner {
+    max-width: 1200px;
+    /* margin: 0 auto; */
+    padding: 0 1rem;
+}
+
+.nav-list,
+.site-footer li {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.site-header a,
+.site-footer a
+ {
+
+    text-decoration: none;
+    color: green;
+}
+
+.header-logo a {
+    text-transform: uppercase;
+}
+
+.site-footer a:hover,
+.site-header a:hover {
+    color:darkgreen;
+    text-decoration: underline;
+}

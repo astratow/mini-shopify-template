@@ -1,1 +1,34 @@
 <h2>Footer</h2>
+<footer class="site-footer">
+    <div class="footer-inner">
+        {% if section.settings.menu != blank %}
+            <nav class="footer-nav">
+                <ul>
+                    {% for link in section.settings.menu.links %}
+                        <li>
+                            <a href="{{ link.url }}">{{ link.title }}</a>
+                        </li>
+                        {% endfor %}
+                </ul>
+            </nav>
+        {% endif %}  
+    </div>
+    <div class="footer-meta">
+        <p>
+           © {{ "now" | date: "%Y" }} {{ shop.name }} 
+        </p>
+    </div>
+</footer>
+
+{%  schema  %}  
+{
+    "name": "Footer",
+    "settings":[
+        {
+            "type": "link_list",
+            "id": "menu",
+            "label": "Footer menu"
+        }
+    ]
+}
+{% endschema %} 

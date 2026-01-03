@@ -26,10 +26,22 @@ The goal of this project is simplicity, performance, and clarity — no bloated 
 - Vanilla JavaScript
 - Shopify CLI
 
+## 🚀 Getting Started
+
+### 1️⃣ Prerequisites
+
+- Shopify Partner account
+- Shopify CLI installed
+- Development store created
 
 ---
 
-## 📁 Theme Structure
+### 2️⃣ Login to Shopify CLI
+
+```bash
+shopify login
+
+
 
 
 

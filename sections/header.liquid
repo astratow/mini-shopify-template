@@ -1,2 +1,40 @@
 
-<h2>Header</h2>
+<header class="site-header">
+    <div class="header-inner">
+        <div class="header-logo">
+            <a href=" {{ routes.root_url }}">
+            {% if section.settings.logo != blank %}    
+                <img src="{{ section.settings.logo | image_url: width: 200 }}" alt="{{ shop.name }}" loading="lazy">
+            {% else %}
+            {{ shop.name }}
+            {% endif %}
+            </a>
+            </div>
+    </div>
+    <div class="header-nav">
+        {% if section.settings.menu != blank %}
+        <ul class="nav-list">
+            {% for link in section.settings.menu.links %}
+            <li><a href="link.url">{{ link.title }}</a></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+</header>
+{%  schema  %}  
+{
+    "name": "Header",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "logo",
+            "label": "Logo"
+        },
+        {
+            "type": "link_list",
+            "id": "menu",
+            "label": "Main menu"
+        }
+    ]
+}
+{% endschema %}
