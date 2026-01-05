@@ -4,14 +4,41 @@
     - Product-aware if product is selected
 {% endcomment %}
 
-{%  assign hero_product = section.settingss.product %}
+{%  assign hero_product = section.settings.product %}
 
 <section class="hero">
     <div class="hero-inner">
-        <hero-content>
+        <div class="hero-content">
+            {% if section.settings.heading != blank %}
+                <h1>{{ section.settings.heading }}</h1>
+            {% endif %}
 
-        </hero-content>
+
+            {% if section.settings.text != blank %}
+                <p class="hero-text">
+                {% section.settings.text %}
+            </p>
+            {% endif %}
+
+            {% if hero_product ! %}
+                <div class="hero-product-meta">
+                    <p class="hero-price">
+                        {{ hero_product.price |  money }}
+                    </p>
+                </div>
+            {% endif %}
+        </div>
     </div>
+
+    {% if section.settings.image != blank %}
+        <div class="hero-media">
+            <img 
+            src="{{ section.settings.image | image_url: width: 1200 }}" 
+            alt="{{ section.settings.heading | escape }}"
+            loading="lazy"
+            />
+            </div>
+    {% endif %}
 </section>
 {%  schema  %}
 {
